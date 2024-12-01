@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="/" class="btn btn-secondary ">Back</a>
+                <h2 class="mt-5">MongoDB Performance Metrics</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Total Connections: <span id="total-connections">0</span></li>
+                    <li class="list-group-item">Active Connections: <span id="active-connections">0</span></li>
+                    <li class="list-group-item">Database Size: <span id="database-size">0 MB</span> KB</li>
+                    <li class="list-group-item">Collections Count: <span id="collections-count">0</span></li>
+                    <li class="list-group-item">Documents Count: <span id="documents-count">0</span></li>
+                    <li class="list-group-item">totalUsers: <span id="totalUsers">0</span></li>
+                    <li class="list-group-item">totalFood: <span id="totalFood">0</span></li>
+                    <li class="list-group-item">totalCategory: <span id="totalCategory">0</span></li>
+                    <li class="list-group-item">totalNation: <span id="totalNation">0</span></li>
+
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+
+                <h1>Admin Dashboard</h1>
+
+                <h2 class="mt-5 ">Users</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% user.forEach((u)=> { %>
+                            <tr>
+                                <td>
+                                    <%= u.name %>
+                                </td>
+                                <td>
+                                    <%= u.email %>
+                                </td>
+                                <td>
+                                    <%= u.role %>
+                                </td>
+                                <td>
+                                    <form action="/user/delete/<%= u._id %>" method="POST" style="display: inline;">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this user?');">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+
+
+                <!-- Food Table -->
+                <h2 class="mt-5">Food</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Calories</th>
+                            <th>Description</th>
+                            <th>Taste</th>
+                            <th>National</th>
+                            <th>Category</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% food.forEach((f)=> { %>
+                            <tr>
+                                <td>
+                                    <%= f.name %>
+                                </td>
+                                <td>
+                                    <%= f.calories %>
+                                </td>
+                                <td>
+                                    <%= f.description %>
+                                </td>
+                                <td>
+                                    <%= f.taste %>
+                                </td>
+                                <td>
+                                    <%= f.nation_id ? f.nation_id.nation : 'No Nation' %>
+                                </td>
+                                <td>
+                                    <%= f.catagory_id ? f.catagory_id.name : 'No Category' %>
+                                </td>
+
+                                <td>
+                                    <a href="/food/edit/<%= f._id %>" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="/food/delete/<%= f._id %>" method="POST" style="display: inline;">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this food item?');">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <a href="/food/add" class="btn btn-sm btn-success">Add Food</a>
+
+
+
+                <!-- Category Table -->
+                <h2 class="mt-5">Categories</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-10">Name</th>
+                            <th class="col-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% catagory.forEach((c)=> { %>
+                            <tr>
+                                <td>
+                                    <%= c.name %>
+                                </td>
+                                <td>
+                                    <a href="/category/edit/<%= c._id %>" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="/category/delete/<%= c._id %>" method="POST" style="display: inline;">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this food item?');">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <a href="/category/add" class="btn btn-sm btn-success">Add Category</a>
+                </table>
+
+
+                <!-- Category Table -->
+                <h2 class="mt-5">National</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="col-10">Nation</th>
+                            <th class="col-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% nationFood.forEach((c)=> { %>
+                            <tr>
+                                <td>
+                                    <%= c.nation %>
+                                </td>
+                                <td>
+                                    <a href="/national/edit/<%= c._id %>" class="btn btn-sm btn-warning">Edit</a>
+                                    <form action="/national/delete/<%= c._id %>" method="POST" style="display: inline;">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Are you sure you want to delete this food item?');">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+                <a href="/national/add" class="btn btn-sm btn-success">Add Category</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Function to fetch MongoDB performance metrics
+        async function fetchMetrics() {
+            try {
+                const response = await fetch('/api/metrics'); // Endpoint to fetch metrics
+                const metrics = await response.json();
+
+                document.getElementById('total-connections').innerText = metrics.totalConnections;
+                document.getElementById('active-connections').innerText = metrics.activeConnections;
+                document.getElementById('database-size').innerText = metrics.databaseSize;
+                document.getElementById('collections-count').innerText = metrics.collectionsCount;
+                document.getElementById('documents-count').innerText = metrics.documentsCount;
+                document.getElementById('totalUsers').innerText = metrics.totalUser;
+                document.getElementById('totalFood').innerText = metrics.totalFood;
+                document.getElementById('totalCategory').innerText = metrics.totalCatagory;
+                document.getElementById('totalNation').innerText = metrics.totalNationFood;
+
+
+            } catch (error) {
+                console.error('Error fetching metrics:', error);
+            }
+        }
+
+        setInterval(fetchMetrics, 1000);
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- นำเข้า JavaScript ของ Bootstrap หลังจาก jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

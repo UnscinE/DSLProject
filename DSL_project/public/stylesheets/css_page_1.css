@@ -1,0 +1,537 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    font-family: kanit;
+}
+
+header {
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px #79747E;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    font-size: 24px;
+    color: #ff0066;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-bottom: 0; /* Removed margin-bottom to align elements on the same line */
+    width: 60%;
+}
+
+.Logo h1 {
+    padding: 5px;
+}
+
+.random_main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#container {
+    width: 500px;
+    height: 200px;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    display: flex; /* ใช้ flexbox */
+    justify-content: center; /* จัดกลางในแนวนอน */
+    align-items: center; /* จัดกลางในแนวตั้ง */
+  }
+  
+  .animate {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: flex;
+    justify-content: center; /* จัดกลางในแนวนอน */
+    align-items: center;    /* จัดกลางในแนวตั้ง */
+  }
+
+.button_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.button_nav button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    
+}
+
+.button_nav button:hover {
+    background-color: white;
+    color: #ff0066;
+    border: 2px solid;
+}
+
+.ran1 {
+    background-color: #ff0066;
+    color: #ffffff;
+    border: none;
+}
+
+.ran2 {
+    background-color: #ffffff;
+    color: gray;
+    border: 1px solid gray;
+}
+
+
+.main-content {
+    text-align: center;
+    padding: 40px;
+}
+
+.main-content h2 {
+    color: #ff0066;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.main-content img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.random-section {
+    background-color: #ffe6f2;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 700px;
+    border-radius: 20px;
+    text-align: center;
+    border: 4px solid #ff66b2;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.random-section img {
+    width: 200px;
+    border-radius: 10px;
+    margin: 20px;
+    
+}
+
+.random-section button {
+    background-color: #ff3399;
+    color: white;
+    padding: 4px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top:10px ;
+    margin-left: 10px;
+    border: 1px solid #ff0066;
+}
+
+.bottom_random:hover{
+     background-color: white;
+    border: 1px solid #ff66b2;
+    color: #ff0066;
+}
+
+
+.food-categories {
+    margin: 20px;
+}
+
+.food-categories label {
+    font-size: 18px;
+    color: #333;
+    margin-right: 5px;
+}
+
+.food-categories button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #ff3399;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.food-categories button:hover {
+    background-color: #ff66b2;
+}
+
+.dish-info {
+    background-color: #fff2f8;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.dish-info h3 {
+    color: #ff0066;
+}
+
+.dish-info ul {
+    padding-left: 20px;
+}
+
+.recommended-foods {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.food-card {
+    background-color: #ffe6f2;
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.food-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #ff3399;
+    color: white;
+    text-align: center;
+    padding: 20px;
+   
+}
+
+footer p {
+    margin: 0;
+}
+
+.food_a_link{
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 30px;
+}
+.food_a_link h4{
+    color: black;
+    font-weight: bolder;
+}
+.food_a_link:hover {
+    background-color: #ff3399;
+    cursor: pointer;
+    transform: scale(1.05);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Added box-shadow for shadow effect */
+}
+.logo1{
+    border-radius: 50%;
+}
+
+/* popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+}
+.popup-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+/* footer column */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.column {
+    flex: 1;
+    margin: 10px;
+    
+}
+.column1{
+    width: 60%;
+    margin-left: 30px;
+}
+.column2{
+    width: 20%;
+    margin-left: 30px;
+}
+.column1img {
+    display: block;
+    margin: 0 auto;
+    max-width:50%;
+    height: auto;
+}
+.logo-image{
+    width: 80%;
+    max-width: 100px;
+    border-radius: 50%;
+    height: auto;
+}
+
+.logo-name{
+    margin-left: 30px;
+}
+.box1{
+    display: flex;
+    border-bottom: 5px solid white;
+    padding-bottom: 5px;
+    border-radius: 1px;
+}
+.description {
+    clear: both;
+    color: black;
+    padding: 10px;
+    text-align: left;
+}
+
+.col3_h3{
+    text-align: left;
+    color: black;
+}
+.col3_ul{
+    text-align: left;
+    color: black;
+}
+.col3_ul a{
+    text-decoration: none;
+    color: black;
+}
+.col3_ul a:hover{
+    text-decoration: underline;
+    color: #f9f9f9;
+    transform: scale(2);
+    font-size: 18px;
+}
+.footer-content{
+    gap: 2rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.logo-image:hover{
+    transform: scale(1.05);
+    border: 5px solid rgb(108, 107, 107);
+}
+
+.category{
+    padding: 5px;
+    border-radius: 10px;
+    width: 15%;
+     border: 2px solid #ff66b2;
+}
+.food_type{
+    padding: 5px;
+    border-radius: 10px;
+    width: 15%;
+    border: 2px solid #ff66b2;
+}
+.p1_inrandom{
+    font-size: 20px;
+}
+.eat{
+    font-size: 40px;
+    
+}
+.category{
+    margin-right: 10px;
+}
+.span_random{
+    color: #ff0066;
+    font-size: 25px;
+}
+
+
+/* เบรกพ้อยแรกสำหรับหน้าจอขนาด 768px (แท็บเล็ต) */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .Logo {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .button_nav  {
+        width: 100%;
+    }
+
+    .main-content img {
+        width: 250px;
+    }
+
+    .recommended-foods {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .ran2{
+        content: "กำหนดเอง";
+    }
+    .logo-image{
+        width: 70%;
+    }
+    .column1{
+        width: 60%;
+        margin-left: 30px;
+    }
+
+}
+/* เบรกพ้อยที่สองสำหรับหน้าจอขนาด 480px (มือถือ) */
+@media screen and (max-width: 480px) {
+    body{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .button_nav {   
+       padding: 0;
+    }
+    .Logo{
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    header h1 {
+        font-size: 20px;
+    }
+
+    header button {
+        padding: 8px 15px;
+    }
+
+    .main-content h2 {
+        font-size: 28px;
+    }
+
+    .main-content img {
+        width: 200px;
+    }
+
+    .random-section img {
+        width: 150px;
+    }
+
+    .food-categories button {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .random-section button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .dish-info {
+        width: 100%;
+        padding: 15px;
+    }
+    .logo-name h1{
+        font-size: 30px;
+    }
+    .footer-content{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 20px;
+    }
+    .logo-image{
+        width: 100%;
+    }
+    .column {
+        width: 100%;
+        border: 1px solid black;
+        margin-bottom: 10px; /* Add margin to separate columns */
+        margin: 0;
+        padding: 20px;
+    }
+    footer{
+        padding: 0;
+    }
+    .box1{
+        padding: 0;
+    }
+
+    body{
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    header{
+        padding: 20px
+    }
+    .column1{
+        width: 100%;
+        margin-left: 0;
+    }
+    .column2{
+        width: 100%;
+        margin-left: 0;
+    }
+    .col3_h3{
+        padding-left: 10px;
+    }
+}
+
+@font-face {
+    font-family: inter;
+    src: url(/font/Inter-4.0/web/Inter-Medium.woff2);
+}
+@font-face {
+    font-family: kanit;
+    src: url(/font/Kanit/Kanit-Medium.ttf);
+}

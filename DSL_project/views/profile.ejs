@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">User Profile</h1>
+
+        <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Name: <%= user.name %></h5>
+                <p class="card-text">Email: <%= user.email %></p>
+                <p class="card-text">Role: <%= user.role %></p>
+            </div>
+        </div>
+        <br>
+
+       
+        <a href="/page_1/" class="btn-back btn-sm btn-primary">Back</a>
+
+        <% if (user.role == 'admin') { %>
+
+        <a href="/dashboard" class="btn-back btn-sm btn-primary">Admin Tool</a>
+
+        <% } %>
+
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

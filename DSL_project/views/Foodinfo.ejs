@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Food Details</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Food Details</h1>
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td><%= food.name %></td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td><%= food.calories %></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><%= food.description %></td>
+            </tr>
+            <tr>
+                <th>Taste</th>
+                <td><%= food.taste %></td>
+            </tr>
+            <tr>
+                <th>Nation</th>
+                <td>
+                        <%= food.nation_id ? food.nation_id.nation : 'N/A' %>
+                </td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>
+                        <%= food.catagory_id ? food.catagory_id.name : 'N/A' %> 
+                </td>
+            </tr>
+        </table>
+        <a href="javascript:history.back()" class="btn btn-secondary">Back</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

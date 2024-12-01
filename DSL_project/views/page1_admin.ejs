@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Food</title>
+    <link rel="stylesheet" href="/stylesheets/css_page_1.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="Logo">
+            <a href="http://127.0.0.1:5500/page_1.html">
+                <img class="logo1" src="/images/logo.png" alt="Random Food Logo">
+            </a>
+            
+            <h1><span style="color: black;">Random</span> Food</h1> 
+        </div>
+        <div class="button_nav">
+            <button class="ran1">สุ่มอาหาร</button>
+            <button class="ran2"><a href="/page_2">สุ่มแบบกำหนดเอง</a></button>
+        </div>
+    </header>
+
+    <div class="random_main">
+        <div id="container">
+        </div>
+    </div>
+    <div id="filterrandom" class="random-section">
+        <h3 id="result">กินอะไรดีน้าาา : </h3>
+        <div id="food-type">
+            <label>ประเภทอาหาร:</label>
+            <button id="thai">อาหารไทย</button>
+            <button id="japan">อาหารญี่ปุ่น</button>
+            <button id="china">อาหารจีน</button>
+            <button id="American">อาหารอเมริกา</button>
+            <button id="India">อาหารอินเดีย</btuun>
+        </div>
+        <div id="food-style">
+            <label>ประเภทการปรุง:</label>
+            <button>ผัด</button>
+            <button>ทอด</button>
+            <button>ต้ม</button>
+            <button>นึ่ง</button>
+            <button>อบ</button>
+            <button>ย่าง</button>
+        </div>
+        <button onclick="myMove()">สุ่มเลย!</button>
+    </div>
+
+
+
+
+    <div class="dish-info">
+
+    </div>
+
+    <div>
+        <h2 style="text-align: center; ">อาหารอื่นๆ แนะนำ</h2>
+    </div>
+
+    <div class="recommended-foods">
+
+        <a class="food_a_link" href="#food1">
+            <div class="food-card">
+                <img src="/images/839ff35df427a0c3fcbc8e25a659e905.jpg" alt="แกงเขียวหวาน">
+                <h4>แกงเขียวหวาน</h4>
+                <p>อาหารคลาสสิก เต็มไปด้วยรสชาติ กลมกล่อม</p>
+            </div>
+        </a>
+
+        <a class="food_a_link" href="#food2">
+            <div class="food-card">
+                <img src="/images/d82a68cf84372012186c5dcaf84a8928.jpg" alt="ผัดไทย">
+                <h4>ผัดไทย</h4>
+                <p>ผัดไทยไทยแท้ รสชาติกลมกล่อม</p>
+            </div>
+        </a>
+
+        <a class="food_a_link" href="#food3">
+            <div class="food-card">
+                <img src="/images/539cc2048eba457d2c24396be531b435.jpg" alt="ปลาราดพริก">
+                <h4>ไก่ทอด เฟรนฟรายส์</h4>
+                <p>ไก่ทอดกรอบ ฟินทุกคำ เสิร์ฟคู่เฟรนฟรายส์ร้อนๆ</p>
+            </div>
+        </a>
+
+        <a class="food_a_link" href="#food4">
+            <div class="food-card">
+                <img src="/images/835db7db3d9f0607a672a33c98b5a048.jpg" alt="ต้มยำกุ้ง">
+                <h4>ต้มยำกุ้ง</h4>
+                <p>ซุปไทยรสจัดจ้าน เปรี้ยว เผ็ด กลิ่นสมุนไพรสดชื่น</p>
+            </div>
+        </a>
+
+
+        <!-- popup -->
+        <!-- popup 1 -->
+        <div class="popup">
+            <div class="popup-content">
+                <!-- Your popup content goes here -->
+                <img src="/images/839ff35df427a0c3fcbc8e25a659e905.jpg" alt="Popup 1 Image">
+                <h3 style="background-color: #ff3399;border-radius: 5px;padding: 3px;">แกงเขียวหวาน</h3>
+                <p style="text-align: left">โดยคุณค่าทางอาหารหลักๆ ได้แก่:</p>
+                <ul>
+                    <li style="text-align: left;color:#333;">
+                        <span style="color: #ff3399;font-size:large;"> โปรตีน :</span>
+                        จากเนื้อสัตว์ เช่น ไก่หรือเนื้อวัว เป็นแหล่งโปรตีนคุณภาพสูงที่ช่วยซ่อมแซมเนื้อเยื่อ
+                        สร้างกล้ามเนื้อ และเสริมสร้างระบบภูมิคุ้มกัน
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;"> คาร์โบไฮเดรต :</span>
+                        เมื่อรับประทานแกงเขียวหวานกับข้าวสวย คุณจะได้รับคาร์โบไฮเดรตที่เป็นแหล่งพลังงานหลักสำหรับร่างกาย
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ไขมัน :</span>
+                        จากกะทิในแกง ซึ่งเป็นไขมันชนิดดี ช่วยในการดูดซึมวิตามินที่ละลายในไขมัน เช่น วิตามิน A, D, E, K
+                        แต่อย่างไรก็ตามควรบริโภคในปริมาณที่พอดี
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">วิตามินและแร่ธาตุ :</span><br>
+                        - วิตามินซี จากพริกและเครื่องเทศ ช่วยเสริมสร้างระบบภูมิคุ้มกัน<br>
+                        - วิตามินเอ จากพริกและผักใบเขียว ช่วยบำรุงสายตาและผิวพรรณ<br>
+                        - ธาตุเหล็ก จากเนื้อสัตว์ ช่วยในการสร้างเม็ดเลือดแดง ป้องกันโรคโลหิตจาง<br>
+                        - แคลเซียม จากมะเขือเปราะ ช่วยบำรุงกระดูกและฟัน
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">สารต้านอนุมูลอิสระ :</span>
+                        สมุนไพรที่ใช้ในพริกแกง เช่น ขมิ้น กระเทียม และใบโหระพา
+                        มีสารต้านอนุมูลอิสระที่ช่วยลดความเสี่ยงต่อการเกิดโรคเรื้อรัง เช่น โรคหัวใจ และมะเร็ง
+                    </li>
+
+
+
+                </ul>
+                <button class="close-popup">Close</button>
+            </div>
+        </div>
+
+        <!-- popup 2 -->
+        <div class="popup">
+            <div class="popup-content">
+                <!-- Your popup content goes here -->
+                <img src="/images/479e4d551e3969091f230c9c1e8d485a.jpg" alt="Popup 2 Image">
+                <h3 style="background-color: #ff3399;border-radius: 5px;padding: 3px;">ผัดไทย</h3>
+                <p style="text-align: left">โดยคุณค่าทางอาหารหลักๆ ได้แก่:</p>
+                <ul>
+                    <li style="text-align: left;color:#333;">
+                        <span style="color: #ff3399;font-size:large;"> โปรตีน :</span><br>
+                        - กุ้ง ไข่ เต้าหู้ : เป็นแหล่งโปรตีนที่ช่วยสร้างกล้ามเนื้อ ซ่อมแซมเนื้อเยื่อ
+                        และเสริมสร้างระบบภูมิคุ้มกัน โปรตีนจากไข่ยังให้วิตามิน B12 ซึ่งช่วยบำรุงระบบประสาท <br>
+                        - ถั่วลิสง : เป็นแหล่งโปรตีนจากพืชที่ดีและยังมีไขมันดีที่เป็นประโยชน์ต่อสุขภาพหัวใจ
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;"> คาร์โบไฮเดรต :</span> <br>
+                        - เส้นจันทร์ (หรือเส้นก๋วยเตี๋ยว): เป็นแหล่งคาร์โบไฮเดรตหลักในผัดไทย
+                        ที่ให้พลังงานแก่ร่างกายในการทำกิจกรรมต่าง ๆ
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ไขมัน :</span><br>
+                        - น้ำมัน ที่ใช้ในการผัด ให้ไขมันที่ช่วยในการดูดซึมวิตามินที่ละลายในไขมัน เช่น วิตามิน A, D, E, K
+                        แต่ควรใช้ในปริมาณที่พอดี <br>
+                        - ถั่วลิสง มีไขมันชนิดดี (ไขมันไม่อิ่มตัว) ที่ช่วยลดระดับคอเลสเตอรอลในเลือด
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">วิตามินและแร่ธาตุ :</span> <br>
+                        - ถั่วงอก ใบกุยช่าย : มีวิตามินซีและวิตามินเอ ที่ช่วยเสริมสร้างระบบภูมิคุ้มกัน และบำรุงผิวพรรณ
+                        <br>
+                        - มะนาว : ให้วิตามินซี ช่วยเสริมภูมิคุ้มกันและเพิ่มรสเปรี้ยวสดชื่น <br>
+                        - กุ้ง : มีธาตุสังกะสีที่ช่วยเสริมระบบภูมิคุ้มกัน และธาตุเหล็กที่ช่วยในการสร้างเม็ดเลือดแดง <br>
+                        - หัวไชโป๊ว : ช่วยเพิ่มใยอาหาร และให้ความหวานจากธรรมชาติ
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">สารต้านอนุมูลอิสระ :</span>
+                        กระเทียม ที่ใส่ในผัดไทยมีสารต้านอนุมูลอิสระที่ช่วยลดการอักเสบและเสริมสร้างภูมิคุ้มกัน
+                    </li>
+
+
+                </ul>
+                <button class="close-popup">Close</button>
+            </div>
+        </div>
+
+        <!-- popup 3 -->
+        <div class="popup">
+            <div class="popup-content">
+                <!-- Your popup content goes here -->
+                <img src="/images/539cc2048eba457d2c24396be531b435.jpg" alt="Popup 1 Image">
+                <h3 style="background-color: #ff3399;border-radius: 5px;padding: 3px;">ไก่ทอด เฟรนฟรายส์</h3>
+                <p style="text-align: left">โดยคุณค่าทางอาหารหลักๆ ได้แก่:</p>
+                <ul>
+                    <li style="text-align: left;color:#333;">
+                        <span style="color: #ff3399;font-size:large;"> โปรตีน :</span><br>
+                        - ไก่ทอด: เนื้อไก่เป็นแหล่งโปรตีนคุณภาพดีที่ช่วยสร้างและซ่อมแซมเนื้อเยื่อในร่างกาย
+                        รวมถึงสร้างกล้ามเนื้อ นอกจากนี้ยังมีวิตามินบีและแร่ธาตุต่าง ๆ เช่น ธาตุเหล็ก สังกะสี และฟอสฟอรัส
+                        แต่ต้องระวังปริมาณไขมันจากหนังไก่และน้ำมันที่ใช้ในการทอด
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;"> คาร์โบไฮเดรต :</span><br>
+                        - เฟรนฟรายส์: มันฝรั่งเป็นแหล่งคาร์โบไฮเดรตหลัก ซึ่งให้พลังงานแก่ร่างกาย อย่างไรก็ตาม
+                        เฟรนฟรายส์ทอดมีปริมาณไขมันที่สูงเนื่องจากการดูดซึมน้ำมันระหว่างการทอด
+                        ควรบริโภคในปริมาณที่พอเหมาะ
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ไขมัน :</span><br>
+                        - ไขมันจากการทอด: การทอดในน้ำมันทำให้ไก่ทอดและเฟรนฟรายส์มีปริมาณไขมันสูง โดยเฉพาะไขมันอิ่มตัว
+                        ซึ่งหากบริโภคมากเกินไปอาจเพิ่มความเสี่ยงต่อโรคหัวใจและไขมันในเลือดสูง
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">วิตามินและแร่ธาตุ :</span><br>
+                        - ไก่: เนื้อไก่มีวิตามิน B6 และ B12 ซึ่งช่วยในการทำงานของระบบประสาทและการเผาผลาญพลังงาน
+                        นอกจากนี้ยังมีธาตุเหล็กที่ช่วยในการสร้างเม็ดเลือดแดง <br>
+                        - มันฝรั่ง: เป็นแหล่งของโพแทสเซียมและวิตามินซี
+                        ที่ช่วยในเรื่องของการควบคุมความดันโลหิตและเสริมภูมิคุ้มกัน
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ใยอาหาร :</span>
+                        แม้ว่า มันฝรั่ง จะมีใยอาหาร แต่ปริมาณใยอาหารในเฟรนฟรายส์จะลดลงเนื่องจากกระบวนการทอด
+                        การเลือกเฟรนฟรายส์ที่มีเปลือกมันฝรั่งจะให้ใยอาหารมากกว่า
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ข้อควรระวัง :</span><br>
+                        - โซเดียม: อาหารทอดมักจะมีการเติมเกลือในปริมาณสูง ซึ่งอาจส่งผลให้ปริมาณโซเดียมในอาหารสูง
+                        หากบริโภคมากเกินไปอาจเพิ่มความเสี่ยงต่อความดันโลหิตสูง<br>
+                        - แคลอรี่: ทั้งไก่ทอดและเฟรนฟรายส์มีแคลอรี่สูงจากไขมันที่ใช้ในการทอด
+                        หากบริโภคในปริมาณมากอาจนำไปสู่การเพิ่มน้ำหนักได้ง่าย
+                    </li>
+
+
+                </ul>
+                <button class="close-popup">Close</button>
+            </div>
+        </div>
+
+        <!-- popup 4 -->
+        <div class="popup">
+            <div class="popup-content">
+                <!-- Your popup content goes here -->
+                <img src="/images/d82a68cf84372012186c5dcaf84a8928.jpg" alt="Popup 1 Image">
+                <h3 style="background-color: #ff3399;border-radius: 5px;padding: 3px;">ต้มยำกุ้ง</h3>
+                <p style="text-align: left">โดยคุณค่าทางอาหารหลักๆ ได้แก่:</p>
+                <ul>
+                    <li style="text-align: left;color:#333;">
+                        <span style="color: #ff3399;font-size:large;"> โปรตีน :</span> <br>
+                        - กุ้ง: กุ้งเป็นแหล่งโปรตีนคุณภาพสูง มีไขมันต่ำและแคลอรี่ต่ำ นอกจากนี้ยังมีแร่ธาตุต่าง ๆ เช่น
+                        สังกะสี ซึ่งช่วยเสริมสร้างระบบภูมิคุ้มกัน และธาตุเหล็กที่ช่วยในการสร้างเม็ดเลือดแดง <br>
+                        - กุ้งยังมี กรดไขมันโอเมก้า 3 ที่ช่วยในการบำรุงสมองและหัวใจ
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ไขมัน :</span><br>
+                        - กุ้งมีปริมาณไขมันต่ำ และมีกรดไขมันไม่อิ่มตัวที่เป็นประโยชน์ต่อสุขภาพหัวใจ แต่ควรระวังการใส่
+                        น้ำพริกเผา ในต้มยำที่อาจมีปริมาณไขมันมากขึ้น
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">วิตามินและแร่ธาตุ :</span><br>
+                        - สมุนไพร เช่น ข่า ตะไคร้ ใบมะกรูด และพริกสด ล้วนเป็นแหล่งของสารต้านอนุมูลอิสระ
+                        ที่ช่วยลดการอักเสบและเสริมสร้างระบบภูมิคุ้มกัน <br>
+                        - มะนาว ที่เป็นส่วนประกอบหลักของต้มยำ มีวิตามินซีสูง ช่วยเสริมสร้างภูมิคุ้มกัน
+                        และส่งเสริมการสร้างคอลลาเจนที่ดีต่อผิว <br>
+                        - เห็ด ในต้มยำยังให้แร่ธาตุ เช่น เซเลเนียม ซึ่งเป็นสารต้านอนุมูลอิสระ
+                        และมีวิตามินบีที่ช่วยในกระบวนการเมตาบอลิซึม
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ใยอาหาร :</span><br>
+                        - สมุนไพร ในต้มยำ เช่น ข่า ตะไคร้ และใบมะกรูด
+                        มีสารต้านอนุมูลอิสระที่ช่วยป้องกันการเกิดโรคเรื้อรัง เช่น โรคหัวใจ และมะเร็ง <br>
+                        - พริก มีสารแคปไซซิน (Capsaicin) ที่ช่วยเผาผลาญพลังงานและช่วยลดการอักเสบในร่างกาย
+                    </li>
+                    <li style="text-align: left;color:#333">
+                        <span style="color: #ff3399;font-size:large;">ข้อควรระวัง :</span><br>
+                        - โซเดียม: หากใช้เครื่องปรุงรสหรือซุปสำเร็จรูป อาจมีปริมาณโซเดียมสูง ควรระมัดระวังในการปรุงรส
+                        เพื่อไม่ให้ได้รับโซเดียมมากเกินไป ซึ่งอาจเสี่ยงต่อความดันโลหิตสูง
+                    </li>
+
+
+                </ul>
+                <button class="close-popup">Close</button>
+            </div>
+        </div>
+
+        <!-- popup script -->
+        <script>
+            const foodLinks = document.querySelectorAll('.food_a_link');
+            const popups = document.querySelectorAll('.popup');
+
+            foodLinks.forEach((link, index) => {
+                link.addEventListener('click', event => {
+                    event.preventDefault(); // Prevent the default link behavior
+                    const popup = popups[index];
+                    popup.style.display = 'flex'; // Show the corresponding popup
+                });
+            });
+
+            popups.forEach(popup => {
+                const closeButton = popup.querySelector('.close-popup');
+                closeButton.addEventListener('click', () => {
+                    popup.style.display = 'none'; // Hide the popup when the close button is clicked
+                });
+            });
+
+            //random
+            // ฟังก์ชันสำหรับดึงข้อมูลจาก Backend ตามประเภทอาหารและสไตล์ที่เลือก
+            async function fetchFilteredItems(category, foodS_type) {
+                const response = await fetch('/api/random-food', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ 
+                        category, food_type }), // ส่งข้อมูลประเภทอาหารและสไตล์ที่เลือก
+                });
+                const data = await response.json();
+                return data.foods; // สมมติว่าได้รับข้อมูลเป็น array ของอาหาร
+            }
+            async function myMove() {
+                const food_category=document.getElementById('category').value;
+                const food_Type=document.getElementById('food_type').value;
+                const items = await fetchFilteredItems(food_Category,food_Type);
+
+                const container = document.getElementById('container');
+                container.innerHTML='';
+
+                items.forEach((item, index) => {
+                    const animateDiv = document.createElement('div');
+                    animateDiv.className = 'animate';
+                    animateDiv.textContent = item.name; // ใส่ชื่ออาหารลงใน div
+                    animateDiv.style.left = (index * 100) + 'px'; // กำหนดตำแหน่งเริ่มต้นของ div
+                    container.appendChild(animateDiv); // เพิ่ม div ลงใน container
+                });
+
+                const animates = document.querySelectorAll('.animate');
+                let totalTime = 7500; // เวลาทั้งหมด 7.5 วินาที
+                let accelerationTime = 1500; // ช่วงเวลาค่อยๆ เพิ่มและลดความเร่ง 2.5 วินาที
+                let startTime = Date.now();
+
+                animates.forEach((item, index) => {
+                    let pos = parseInt(window.getComputedStyle(item).left);
+                    let id = setInterval(frame, 8);
+
+                function frame() {
+                    let elapsedTime = Date.now() - startTime;
+                    let remainingTime = totalTime - elapsedTime;
+                    let speed;
+
+                    if (elapsedTime >= totalTime) {
+                        clearInterval(id);
+                    } else {
+                        if (elapsedTime <= accelerationTime) {
+                            // เพิ่มความเร่งในช่วง 2.5 วินาทีแรก
+                            let progress = elapsedTime / accelerationTime;
+                            speed = progress * 9; // ค่อยๆ เพิ่มความเร็วไปที่ 3
+                        } else if (remainingTime <= accelerationTime) {
+                            // ลดความเร่งในช่วง 2.5 วินาทีสุดท้าย
+                            let progress = remainingTime / accelerationTime;
+                            speed = progress * 9; // ค่อยๆ ลดความเร็วจาก 3 ไปที่ 0
+                        } else {
+                            // ความเร็วคงที่ในช่วงกลาง
+                            speed = 9;
+                        }
+
+                        pos += speed;
+                        if (pos > 500) { // ตรวจสอบการออกนอกพื้นที่ container
+                            pos = -100 + (pos - 500); // รีเซ็ตตำแหน่งไปด้านซ้ายโดยคำนวณค่าเกินจาก 300
+                        }
+                        item.style.left = pos + "px";
+                    }
+                }
+            });
+            // สุ่มเวลาในช่วง 7-9 วินาที (7000 ถึง 9000 มิลลิวินาที)
+            let randomTime = Math.random() * (10000 - 7000) + 7000;
+
+            // เลือกไอเทมแบบสุ่มหลังจากเวลาสุ่มนั้น
+            setTimeout(() => {
+                let randomIndex = Math.floor(Math.random() * items.length);
+                let selectedItem = items[randomIndex];
+                document.getElementById("result").innerHTML = "คุณได้เมนู : " + selectedItem.textContent;
+            }, randomTime);
+            }
+
+        </script>
+
+
+    </div>
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="column1" >
+
+                <div class="box1">
+                    <a href="http://127.0.0.1:5500/page_1.html">
+                        <img src="/images/2.png" alt="Logo" class="logo-image">
+                    </a>
+                    <h1 class="logo-name"><span style="color: black;">Random</span> Food</h1>
+                </div>
+                <p class="description">
+                    แพลตฟอร์มออนไลน์ที่ช่วยให้ผู้ใช้เลือกเมนู
+                อาหารแบบสุ่มจากรายการที่มีอยู่ เพื่อให้การตัดสินใจเลือกอาหารเป็น
+                เรื่องง่ายและสนุกสนาน
+                </p>
+                
+                </p>
+            </div>
+
+            <div class="column2">
+                <h3 class="col3_h3">Quick Links</h3>
+                <ul class="col3_ul">
+                    <a href="http://127.0.0.1:5500/page_1.html">
+                        <li class="li_col">สุ่มอาหาร</li>
+                    </a>
+                    <a href="http://127.0.0.1:5500/page_2.html">
+                        <li class="li_col">สุ่มอาหารแบบกำหนดเอง</li>
+                    </a>
+                
+                </ul>
+            </div>
+            
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

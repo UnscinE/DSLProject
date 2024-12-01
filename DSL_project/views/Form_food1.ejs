@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form with Buttons</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .btn-custom {
+            background-color: #ff3399;
+            color: white;
+            width: 150px;
+            text-align: center;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff3399;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .btn-back:hover, .btn-custom:hover {
+            background-color: #d50a6f;
+            color: white;
+            text-decoration: none;
+        }
+
+        input, select, textarea {
+            background-color: #f8d3e3 !important;
+        }
+    </style>
+</head>
+
+<% if (loggedIn) { %>
+
+<body>
+    <div class="container form-container">
+        <h1 class="text-center"><%= food ? 'แก้ไขข้อมูลอาหาร' : 'เพิ่มข้อมูลอาหาร' %></h1>
+        <form action="<%= food ? '/page_2/update/' + food._id : '/page_2/addfood' %>" method="POST">
+            <div class="form-group">
+                <label for="name">ชื่ออาหาร</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= food ? food.name : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="calories">แคลอรี่</label>
+                <input type="number" class="form-control" id="calories" name="calories" value="<%= food ? food.calories : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="description">คำอธิบาย</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required><%= food ? food.description : '' %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="taste">รสชาติ</label>
+                <input type="text" class="form-control" id="taste" name="taste" value="<%= food ? food.taste : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="nation">สัญชาติ</label>
+                <select class="form-control" id="nation"  placeholder="กรุณากรอกสัญชาติ" name="nation_id" required>
+                    <% nations.forEach(nation => { %>
+                        <option value="<%= nation._id %>" <%= food && food.nation_id._id == nation._id ? 'selected' : '' %>><%= nation.nation %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">หมวดหมู่</label>
+                <select class="form-control" id="category" placeholder="กรุณากรอกหมวดหมู่" name="catagory_id" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category._id %>" <%= food && food.catagory_id._id == category._id ? 'selected' : '' %>><%= category.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <!-- ปุ่มต่างๆ -->
+            <div class="btn-container">
+                <button type="submit" class="btn btn-custom"><%= food ? 'แก้ไข' : 'เพิ่มข้อมูล' %></button>
+                <a class="btn-back" href="javascript:history.back()">ยกเลิก</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+<% } %>
+
+<% if (!loggedIn) { %>
+
+<body>
+    <div class="container form-container">
+        <h1 class="text-center"><%= food ? 'แก้ไขข้อมูลอาหาร' : 'เพิ่มข้อมูลอาหาร' %></h1>
+        <form action="<%= food ? '/page_2/update/' + food._id : '/page_2/addfood' %>" method="POST">
+            <div class="form-group">
+                <label for="name">ชื่ออาหาร</label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= food ? food.name : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="calories">แคลอรี่</label>
+                <input type="number" class="form-control" id="calories" name="calories" value="<%= food ? food.calories : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="description">คำอธิบาย</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required><%= food ? food.description : '' %></textarea>
+            </div>
+            <div class="form-group">
+                <label for="taste">รสชาติ</label>
+                <input type="text" class="form-control" id="taste" name="taste" value="<%= food ? food.taste : '' %>" required>
+            </div>
+            <div class="form-group">
+                <label for="nation">สัญชาติ</label>
+                <select class="form-control" id="nation"  placeholder="กรุณากรอกสัญชาติ" name="nation_id" required>
+                    <% nations.forEach(nation => { %>
+                        <option value="<%= nation._id %>" <%= food && food.nation_id._id == nation._id ? 'selected' : '' %>><%= nation.nation %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="category">หมวดหมู่</label>
+                <select class="form-control" id="category" placeholder="กรุณากรอกหมวดหมู่" name="catagory_id" required>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category._id %>" <%= food && food.catagory_id._id == category._id ? 'selected' : '' %>><%= category.name %></option>
+                    <% }) %>
+                </select>
+            </div>
+
+            <!-- ปุ่มต่างๆ -->
+            <div class="btn-container">
+                <button type="submit" class="btn btn-custom"><%= food ? 'แก้ไข' : 'เพิ่มข้อมูล' %></button>
+                <a class="btn-back" href="javascript:history.back()">ยกเลิก</a>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+<% } %>
+
+</html>
